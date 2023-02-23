@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+
+appDescription: "Pragma PowerUp"
+appVersion: "1.0.0"
+

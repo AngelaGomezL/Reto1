@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AngelaGomezL/microservice.git
+          username: AngelaGomezL
+          password: angelagomez12
+          default-label: main
+          search-paths: config-data
+
+  security:
+    user:
+      name: root
+      password: s3cr3t
+
+
+

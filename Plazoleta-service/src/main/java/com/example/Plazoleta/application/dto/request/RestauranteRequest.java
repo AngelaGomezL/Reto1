@@ -13,9 +13,9 @@ public class RestauranteRequest {
 
     private Integer id;
     private String nombre;
-    /*private String direccion;
+    private String direccion;
     private Integer idPropietario;
     private String telefono;
     private String urlLogo;
-    private String nit;*/
+    private String nit;
 }

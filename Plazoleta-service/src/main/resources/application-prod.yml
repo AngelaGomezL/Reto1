@@ -4,8 +4,11 @@ spring:
     username: postgres
     password: gomez123.
     driver-class-name: org.postgresql.Driver
+    application:
+      name: plazoleta-service
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+

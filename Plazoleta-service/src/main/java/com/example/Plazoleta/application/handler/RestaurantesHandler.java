@@ -28,10 +28,6 @@ public class RestaurantesHandler implements IRestaurantesHandler{
         Restaurante restaurante = restaurantesRequestMapper.toRestaurante(restauranteRequest);
         restauranteServicePort.saveRestaurante(restaurante);
     }
-    @PostConstruct
-    public void Prueba(){
-        System.out.println("Hola mundooooooooooooooooooooooooooooooooooo alexanderrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
-    }
 
     @Override
     public List<RestauranteResponse> getAllRestauranteFromRestaurantes() {

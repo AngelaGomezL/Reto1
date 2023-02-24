@@ -13,3 +13,8 @@ spring:
     show-sql: true
     properties:
       hibernate: org.hibernate.dialect.PostgreSQL94Dialect
+
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://localhost:8099/eureka

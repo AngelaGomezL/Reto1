@@ -5,21 +5,18 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-
-import java.math.BigInteger;
-
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
-public class Usuario {
+public class User {
     private Integer id;
     private String nombre;
     private String apellido;
     private String celular;
-    private String correo;
+    private String email;
     private String clave;
-    private String idRol;
+    private Role role;
     private String documentoIdentidad;
 
 

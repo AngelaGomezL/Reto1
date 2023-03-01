@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.ReportingPolicy;
 
-import java.sql.SQLOutput;
+import java.util.Optional;
 
 @Mapper(componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
@@ -18,16 +18,25 @@ public interface IRestauranteEntityMapper {
 
     @Mappings({
             @Mapping(target="id", source="id"),
-            @Mapping(target="nombre", source="nombre")
-            /*@Mapping(target="direccion", source="direccion"),
+            @Mapping(target="nombre", source="nombre"),
+            @Mapping(target="direccion", source="direccion"),
             @Mapping(target="idPropietario", source="idPropietario"),
             @Mapping(target="telefono", source="telefono"),
             @Mapping(target="urlLogo", source="urlLogo"),
-            @Mapping(target="nit", source="nit")*/
+            @Mapping(target="nit", source="nit")
     })
 
     RestauranteEntity toEntity(Restaurante restaurante);
 
+    @Mappings({
+            @Mapping(target="id", source="id"),
+            @Mapping(target="nombre", source="nombre"),
+            @Mapping(target="direccion", source="direccion"),
+            @Mapping(target="idPropietario", source="idPropietario"),
+            @Mapping(target="telefono", source="telefono"),
+            @Mapping(target="urlLogo", source="urlLogo"),
+            @Mapping(target="nit", source="nit")
+    })
     Restaurante toRestaurante(RestauranteEntity restauranteEntity);
 
 

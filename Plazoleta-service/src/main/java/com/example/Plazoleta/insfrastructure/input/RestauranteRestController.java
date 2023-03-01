@@ -1,7 +1,7 @@
 package com.example.Plazoleta.insfrastructure.input;
 
-import com.example.Plazoleta.application.dto.request.RestauranteRequest;
-import com.example.Plazoleta.application.handler.IRestaurantesHandler;
+import com.example.Plazoleta.application.dto.Restaurante.RestauranteRequest;
+import com.example.Plazoleta.application.handler.handlerRestaurante.IRestaurantesHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +24,4 @@ public class RestauranteRestController {
                 .status(HttpStatus.CREATED)
                 .body(restauranteRequest);
     }
-
-
-    
-
 }

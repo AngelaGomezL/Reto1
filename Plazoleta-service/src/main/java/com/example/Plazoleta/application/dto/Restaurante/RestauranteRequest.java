@@ -1,4 +1,4 @@
-package com.example.Plazoleta.application.dto.request;
+package com.example.Plazoleta.application.dto.Restaurante;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,5 +17,6 @@ public class RestauranteRequest {
     private Integer idPropietario;
     private String telefono;
     private String urlLogo;
+    private Integer idRestaurante;
     private String nit;
 }

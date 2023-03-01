@@ -1,5 +1,6 @@
 package com.example.Plazoleta.domain.modelo;
 
+import com.example.Plazoleta.insfrastructure.output.entity.PlatoEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,7 +16,7 @@ public class Plato {
     private String idCategoria;
     private String descripcion;
     private String precio;
-    private String idRestaurante;
+    private Integer idRestaurante;
     private String urlImagen;
-    private String activo;
+
 }

@@ -1,7 +1,7 @@
-package com.example.Plazoleta.application.mapper;
+package com.example.Plazoleta.application.mapper.RestauranteMapper;
 
 
-import com.example.Plazoleta.application.dto.request.RestauranteRequest;
+import com.example.Plazoleta.application.dto.Restaurante.RestauranteRequest;
 import com.example.Plazoleta.domain.modelo.Restaurante;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

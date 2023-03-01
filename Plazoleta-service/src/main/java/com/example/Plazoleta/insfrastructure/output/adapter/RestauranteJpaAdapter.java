@@ -25,4 +25,9 @@ public class RestauranteJpaAdapter implements IRestaurantePersistencePort {
         return null;
     }
 
+    @Override
+    public Restaurante findById(Integer id) {
+        return restauranteEntityMapper.toRestaurante(restauranteRepository.findById(id).get());
+    }
+
 }

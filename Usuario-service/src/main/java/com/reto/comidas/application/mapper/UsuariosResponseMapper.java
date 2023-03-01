@@ -1,12 +1,7 @@
 package com.reto.comidas.application.mapper;
 
-import com.reto.comidas.application.dto.UsuariosRequest;
-import com.reto.comidas.application.dto.UsuariosResponse;
-import com.reto.comidas.domain.modelo.Usuario;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
-
-import java.util.List;
 
 @Mapper(componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
@@ -14,7 +9,16 @@ import java.util.List;
 
 
 public interface UsuariosResponseMapper {
-    UsuariosResponse toResponse(Usuario usuario);
+   /* @Mappings({
+            @Mapping(target="nombre", source="nombre"),
+            @Mapping(target="apellido", source="apellido"),
+            @Mapping(target="celular", source="celular"),
+            @Mapping(target="correo", source="correo"),
+            @Mapping(target="role", source="role")
 
-    List<UsuariosResponse> toResponseList(List<Usuario> usuarioList);
+    })
+    UsuariosResponse toUsuarioResponse(Usuario usuario);
+    List<UsuariosResponse> toUsuarioResponse(List<Usuario> user);
+
+*/
 }

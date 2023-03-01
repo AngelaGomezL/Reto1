@@ -1,14 +1,15 @@
 package com.reto.comidas.domain.spi;
 
-import com.reto.comidas.domain.modelo.Usuario;
-import com.reto.comidas.infrastruture.output.entity.UsuarioEntity;
+import com.reto.comidas.domain.modelo.User;
 
 
 import java.util.List;
 
 public interface IUsuarioPersistencePort {
-    void createUsuario(Usuario usuario);
-    List<Usuario>getAllUsuario();
+    void createUsuario(User usuario);
+    List<User>getAllUsuario();
+    User getUserByEmail(String email);
+    boolean existsByEmail(String email);
 
 
 

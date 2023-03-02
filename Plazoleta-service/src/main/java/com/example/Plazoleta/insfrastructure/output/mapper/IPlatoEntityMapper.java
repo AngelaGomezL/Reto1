@@ -25,6 +25,11 @@ public interface IPlatoEntityMapper  {
         entity.setRestaurante(RestauranteEntity.builder().id(plato.getIdRestaurante()).build());
     }
 
+    Plato toPlato(PlatoEntity platoEntity);
 
+    @AfterMapping
+    default void setRestauranteIdPlato(PlatoEntity entity,@MappingTarget  Plato plato){
+        plato.setIdRestaurante(entity.getRestaurante().getId());
+    }
 
 }

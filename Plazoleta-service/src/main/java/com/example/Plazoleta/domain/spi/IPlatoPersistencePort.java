@@ -11,5 +11,7 @@ public interface IPlatoPersistencePort {
     Plato getPlato(Integer id);
     void updatePlate(Plato plato);
 
+    Plato findById(Integer id);
+
 
 }

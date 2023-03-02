@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/api/v1/usuario")
 @RequiredArgsConstructor
 public class UsuarioRestController {
     private final IUsuariosHandler usuariosHandler;
+    @Autowired
     private  RestauranteClient restauranteClient;
 
     @PostMapping("/propietario")
@@ -37,7 +38,6 @@ public class UsuarioRestController {
         usuariosHandler.saveUsuario(usuarioRequest, 3);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
-
 
     @PostMapping("/restaurante")
     public  ResponseEntity<RestauranteRequest> saveRestaurante(@RequestBody RestauranteRequest restauranteRequest){

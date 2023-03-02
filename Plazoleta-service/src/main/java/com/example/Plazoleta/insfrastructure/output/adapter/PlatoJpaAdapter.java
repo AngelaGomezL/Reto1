@@ -39,4 +39,9 @@ public class PlatoJpaAdapter implements IPlatoPersistencePort {
     public void updatePlate(Plato plato) {
 
     }
+
+    @Override
+    public Plato findById(Integer id) {
+        return platoEntityMapper.toPlato(platoRepository.findById(id).get());
+    }
 }

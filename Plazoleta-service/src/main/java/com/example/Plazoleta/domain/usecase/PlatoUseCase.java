@@ -22,4 +22,9 @@ public class PlatoUseCase implements IPlatoServicePort {
     public void savePlato(Plato plato) {
         platoPersistencePort.savePlato(plato);
     }
+
+    @Override
+    public Plato findById(Integer id) {
+        return platoPersistencePort.findById(id);
+    }
 }

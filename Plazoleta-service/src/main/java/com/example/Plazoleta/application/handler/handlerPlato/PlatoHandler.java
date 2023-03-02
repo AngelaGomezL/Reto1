@@ -1,7 +1,6 @@
 package com.example.Plazoleta.application.handler.handlerPlato;
 
 import com.example.Plazoleta.application.dto.Plato.PlatoRequest;
-import com.example.Plazoleta.application.dto.Plato.PlatoResponse;
 import com.example.Plazoleta.application.mapper.PlatoMapper.IPlatoRequestMapper;
 import com.example.Plazoleta.domain.api.IPlatoServicePort;
 import com.example.Plazoleta.domain.modelo.Plato;
@@ -25,7 +24,13 @@ public class PlatoHandler implements IPlatoHandler {
     }
 
     @Override
-    public PlatoResponse getPlate(Integer id) {
-        return null;
+    public Plato findById(Integer id) {
+        return platoServicePort.findById(id);
     }
+
+    @Override
+    public void savePlato2(Plato platoRequest) {
+        platoServicePort.savePlato(platoRequest);
+    }
+
 }

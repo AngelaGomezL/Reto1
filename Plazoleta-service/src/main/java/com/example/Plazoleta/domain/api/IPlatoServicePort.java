@@ -4,4 +4,6 @@ import com.example.Plazoleta.domain.modelo.Plato;
 
 public interface IPlatoServicePort {
     void savePlato(Plato plato);
+
+    Plato findById(Integer id);
 }

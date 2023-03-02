@@ -1,29 +1,28 @@
 package com.example.Plazoleta.insfrastructure.output.mapper;
 
 import com.example.Plazoleta.domain.modelo.Plato;
-import com.example.Plazoleta.domain.modelo.Restaurante;
 import com.example.Plazoleta.insfrastructure.output.entity.PlatoEntity;
 import com.example.Plazoleta.insfrastructure.output.entity.RestauranteEntity;
 import org.mapstruct.*;
-
-import java.util.Optional;
 
 @Mapper(componentModel = "spring",
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface IPlatoEntityMapper  {
     @Mappings({
-            @Mapping(target="id", source= "plato.id"),
-            @Mapping(target="nombre", source="plato.nombre"),
-            @Mapping(target="precio", source="plato.precio"),
-            @Mapping(target="descripcion", source="plato.descripcion"),
-            @Mapping(target="urlImagen", source="plato.urlImagen"),
-            @Mapping(target="idRestaurante", source="restaurante"),
-            @Mapping(target="idCategoria", source="plato.idCategoria")
+            @Mapping(target="id", source= "id"),
+            @Mapping(target="nombre", source="nombre"),
+            @Mapping(target="precio", source="precio"),
+            @Mapping(target="descripcion", source="descripcion"),
+            @Mapping(target="urlImagen", source="urlImagen"),
+            @Mapping(target="idCategoria", source="idCategoria"),
+            @Mapping(target = "activo", source = "activo")
     })
-    PlatoEntity toEntity(Plato plato, Restaurante restaurante);
-    default PlatoEntity mapContext(Plato plato, @Context Restaurante restaurante) {
-        return toEntity(plato , restaurante);
+    PlatoEntity toEntity(Plato plato);
+
+    @AfterMapping
+    default void setRestauranteId(@MappingTarget PlatoEntity entity, Plato plato){
+        entity.setRestaurante(RestauranteEntity.builder().id(plato.getIdRestaurante()).build());
     }
 
 

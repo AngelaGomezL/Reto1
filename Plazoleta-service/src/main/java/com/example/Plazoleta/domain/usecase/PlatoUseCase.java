@@ -20,11 +20,6 @@ public class PlatoUseCase implements IPlatoServicePort {
 
     @Override
     public void savePlato(Plato plato) {
-        System.out.println("loooooooooooooooooooolaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-        Integer idRestaurante = plato.getIdRestaurante();
-        Restaurante restaurante = restaurantePersistencePort.findById(idRestaurante);
-        platoPersistencePort.savePlato(plato,restaurante);
-        System.out.println(restaurante.getId());
-
+        platoPersistencePort.savePlato(plato);
     }
 }

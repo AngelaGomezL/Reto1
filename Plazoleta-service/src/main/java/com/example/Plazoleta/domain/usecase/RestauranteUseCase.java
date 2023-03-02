@@ -20,7 +20,7 @@ public class RestauranteUseCase implements IRestauranteServicePort {
     }
 
     @Override
-    public List<Restaurante> getAllRestaurante() {
+    public List<Restaurante> findAllRestaurante() {
         return restaurantePersistencePort.getAllRestaurante();
     }
 

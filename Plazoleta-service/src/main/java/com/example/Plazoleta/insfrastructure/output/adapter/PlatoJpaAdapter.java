@@ -20,8 +20,8 @@ public class PlatoJpaAdapter implements IPlatoPersistencePort {
 
 
     @Override
-    public void savePlato(Plato plato, Restaurante restaurante) {
-        PlatoEntity platoEntity = platoEntityMapper.toEntity(plato,restaurante);
+    public void savePlato(Plato plato) {
+        PlatoEntity platoEntity = platoEntityMapper.toEntity(plato);
         platoRepository.save(platoEntity);
     }
 

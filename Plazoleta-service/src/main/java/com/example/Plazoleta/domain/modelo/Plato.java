@@ -18,5 +18,6 @@ public class Plato {
     private String precio;
     private Integer idRestaurante;
     private String urlImagen;
+    private Boolean activo;
 
 }

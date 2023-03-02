@@ -19,7 +19,8 @@ public interface IPlatoRequestMapper {
             @Mapping(target="descripcion", source="descripcion"),
             @Mapping(target="urlImagen", source="urlImagen"),
             @Mapping(target="idRestaurante", source="idRestaurante"),
-            @Mapping(target="idCategoria", source="idCategoria")
+            @Mapping(target="idCategoria", source="idCategoria"),
+            @Mapping(target = "activo", source = "activo")
     })
 
     Plato toPlato(PlatoRequest platoRequest);

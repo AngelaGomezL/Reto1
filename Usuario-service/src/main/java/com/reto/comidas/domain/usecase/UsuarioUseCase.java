@@ -24,20 +24,7 @@ public class UsuarioUseCase implements IUsuarioServicePort {
 
     @Override
     public void createUsuario(User usuario, Integer idRol) {
-        Role role = new Role();
-        role.setId(idRol);
-        if(idRol == 0) {
-            role.setNombre("admin");
-            role.setDescripcion("admin");
-        }
-        if(idRol == 1) {
-            role.setNombre("propietario");
-            role.setDescripcion("admin");
-        }
-        if(idRol == 2) {
-            role.setNombre("empleado");
-            role.setDescripcion("admin");
-        }
+        Role role = Role.builder().id(idRol).build();
         usuario.setRole(role);
         usuarioPersistencePort.createUsuario(usuario);
     }
@@ -49,6 +36,8 @@ public class UsuarioUseCase implements IUsuarioServicePort {
 
     @Override
     public boolean existByEmail(String email) {
-        return usuarioPersistencePort.existsByEmail(email);
+        return false;
     }
+
+
 }

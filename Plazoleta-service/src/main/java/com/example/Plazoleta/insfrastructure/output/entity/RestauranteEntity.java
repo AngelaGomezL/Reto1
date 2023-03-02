@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "restaurante")
+@Builder
 @Getter
 @Setter
 @AllArgsConstructor
@@ -14,7 +15,6 @@ public class RestauranteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @NonNull
     @Column(name = "nombre", nullable = false)
     private String nombre;
     @Column(name = "direccion", nullable = false)

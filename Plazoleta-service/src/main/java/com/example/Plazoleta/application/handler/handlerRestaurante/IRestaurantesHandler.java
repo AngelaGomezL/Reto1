@@ -9,6 +9,6 @@ public interface IRestaurantesHandler {
 
     void saveRestaurante(RestauranteRequest restauranteRequest);
 
-    List<RestauranteResponse> getAllRestauranteFromRestaurantes();
+    List<RestauranteResponse> findAllRestauranteFromRestaurantes();
 
 }

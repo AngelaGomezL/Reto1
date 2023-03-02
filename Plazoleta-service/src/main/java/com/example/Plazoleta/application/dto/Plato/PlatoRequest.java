@@ -26,5 +26,5 @@ public class PlatoRequest {
     @NotBlank
     private String urlImagen;
 
-
+    private Boolean activo = true;
 }

@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,9 +21,21 @@ public class UsuarioRestController {
     private  RestauranteClient restauranteClient;
 
     @PostMapping("/propietario")
-    public ResponseEntity<Void> saveEmpleado(@Validated @RequestBody UsuariosRequest usuarioRequest){
-            usuariosHandler.saveUsuario(usuarioRequest, 0);
+    public ResponseEntity<Void> savePropietario(@Validated @RequestBody UsuariosRequest usuarioRequest){
+            usuariosHandler.saveUsuario(usuarioRequest, 1);
             return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @PostMapping("/empleado")
+    public ResponseEntity<Void> saveEmpleado(@Validated @RequestBody UsuariosRequest usuarioRequest){
+        usuariosHandler.saveUsuario(usuarioRequest, 2);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @PostMapping("/usuario")
+    public ResponseEntity<Void> saveUsuario(@Validated @RequestBody UsuariosRequest usuarioRequest){
+        usuariosHandler.saveUsuario(usuarioRequest, 3);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 

@@ -8,8 +8,8 @@ import java.util.List;
 public interface IUsuarioPersistencePort {
     void createUsuario(User usuario);
     List<User>getAllUsuario();
+    User getUser(Integer id);
     User getUserByEmail(String email);
-    boolean existsByEmail(String email);
 
 
 

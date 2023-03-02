@@ -1,9 +1,12 @@
 package com.reto.comidas.domain.modelo;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
 @Setter
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Role {
     private Integer id;
     private String nombre;

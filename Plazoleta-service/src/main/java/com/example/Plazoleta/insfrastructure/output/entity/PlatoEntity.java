@@ -29,9 +29,12 @@ public class PlatoEntity {
 
     @ManyToOne
     @JoinColumn(name="id_Restaurante",referencedColumnName ="id")
-    private RestauranteEntity idRestaurante;
+    private RestauranteEntity restaurante;
 
     @Column(name = "url_imagen", nullable = false)
     private String urlImagen;
+
+    @Column(name = "activo",nullable = false)
+    private Boolean activo;
 
 }

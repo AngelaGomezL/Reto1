@@ -29,7 +29,7 @@ public class RestaurantesHandler implements IRestaurantesHandler {
     }
 
     @Override
-    public List<RestauranteResponse> getAllRestauranteFromRestaurantes() {
+    public List<RestauranteResponse> findAllRestauranteFromRestaurantes() {
         return null;
     }
 }

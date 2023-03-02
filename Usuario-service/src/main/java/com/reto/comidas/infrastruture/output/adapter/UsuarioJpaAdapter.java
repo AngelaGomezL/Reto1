@@ -28,12 +28,14 @@ public class UsuarioJpaAdapter implements IUsuarioPersistencePort {
     }
 
     @Override
-    public User getUserByEmail(String email) {
+    public User getUser(Integer id) {
         return null;
     }
 
     @Override
-    public boolean existsByEmail(String email) {
-        return false;
+    public User getUserByEmail(String email) {
+        return null;
     }
+
+
 }

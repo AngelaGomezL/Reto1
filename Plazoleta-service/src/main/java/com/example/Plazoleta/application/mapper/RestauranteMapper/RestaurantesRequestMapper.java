@@ -14,7 +14,6 @@ import org.mapstruct.ReportingPolicy;
 public interface RestaurantesRequestMapper {
 
     @Mappings({
-            @Mapping(target="id", source= "id"),
             @Mapping(target="nombre", source="nombre"),
             @Mapping(target="direccion", source="direccion"),
             @Mapping(target="idPropietario", source="idPropietario"),
@@ -22,6 +21,5 @@ public interface RestaurantesRequestMapper {
             @Mapping(target="urlLogo", source="urlLogo"),
             @Mapping(target="nit", source="nit")
     })
-
     Restaurante toRestaurante(RestauranteRequest restauranteRequest);
 }

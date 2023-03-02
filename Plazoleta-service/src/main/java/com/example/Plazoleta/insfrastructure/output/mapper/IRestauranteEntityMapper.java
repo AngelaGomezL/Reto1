@@ -17,7 +17,7 @@ import java.util.Optional;
 public interface IRestauranteEntityMapper {
 
     @Mappings({
-            @Mapping(target="id", source="id"),
+            //@Mapping(target="id", source="id"),
             @Mapping(target="nombre", source="nombre"),
             @Mapping(target="direccion", source="direccion"),
             @Mapping(target="idPropietario", source="idPropietario"),
@@ -29,7 +29,7 @@ public interface IRestauranteEntityMapper {
     RestauranteEntity toEntity(Restaurante restaurante);
 
     @Mappings({
-            @Mapping(target="id", source="id"),
+            //@Mapping(target="id", source="id"),
             @Mapping(target="nombre", source="nombre"),
             @Mapping(target="direccion", source="direccion"),
             @Mapping(target="idPropietario", source="idPropietario"),

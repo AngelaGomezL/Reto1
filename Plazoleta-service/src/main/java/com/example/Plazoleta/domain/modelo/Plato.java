@@ -1,15 +1,12 @@
 package com.example.Plazoleta.domain.modelo;
 
-import com.example.Plazoleta.insfrastructure.output.entity.PlatoEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
-@Builder
+@Builder(toBuilder = true)
 @AllArgsConstructor
+@NoArgsConstructor
 public class Plato {
     private Integer id;
     private String nombre;

@@ -1,4 +1,4 @@
-package com.example.Plazoleta.application.dto.Plato;
+package com.reto.comidas.application.dto;
 
 import lombok.Getter;
 import lombok.Setter;

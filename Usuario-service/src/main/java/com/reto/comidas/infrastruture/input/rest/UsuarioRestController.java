@@ -1,5 +1,7 @@
 package com.reto.comidas.infrastruture.input.rest;
 
+import com.reto.comidas.application.dto.PlatoRequest;
+import com.reto.comidas.application.dto.PlatoUpdateRequest;
 import com.reto.comidas.application.dto.RestauranteRequest;
 import com.reto.comidas.application.dto.UsuariosRequest;
 import com.reto.comidas.application.handler.IUsuariosHandler;
@@ -11,6 +13,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 
 @RestController
@@ -46,5 +51,19 @@ public class UsuarioRestController {
                 .status(HttpStatus.CREATED)
                 .body(restauranteRequest);
     }
+    @PostMapping("/plato")
+    public ResponseEntity<Void> savePlateEntity(@RequestBody PlatoRequest platoRequest){
+        PlatoRequest plato = restauranteClient.savePlateEntity(platoRequest).getBody();
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+    @PutMapping("/modificar")
+    public ResponseEntity<Void> updatePlateEntity(@RequestBody @Valid PlatoUpdateRequest platoRequest){
+        restauranteClient.updatePlateEntity(platoRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+
+
+
 
 }

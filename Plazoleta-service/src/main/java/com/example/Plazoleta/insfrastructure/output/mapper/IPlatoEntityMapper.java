@@ -24,11 +24,19 @@ public interface IPlatoEntityMapper  {
     default void setRestauranteId(@MappingTarget PlatoEntity entity, Plato plato){
         entity.setRestaurante(RestauranteEntity.builder().id(plato.getIdRestaurante()).build());
     }
-
+    @Mappings({
+            @Mapping(target="id", source= "id"),
+            @Mapping(target="nombre", source="nombre"),
+            @Mapping(target="precio", source="precio"),
+            @Mapping(target="descripcion", source="descripcion"),
+            @Mapping(target="urlImagen", source="urlImagen"),
+            @Mapping(target="idCategoria", source="idCategoria"),
+            @Mapping(target = "activo", source = "activo")
+    })
     Plato toPlato(PlatoEntity platoEntity);
 
     @AfterMapping
-    default void setRestauranteIdPlato(PlatoEntity entity,@MappingTarget  Plato plato){
+    default void setRestauranteIdPlato(@MappingTarget  Plato plato, PlatoEntity entity){
         plato.setIdRestaurante(entity.getRestaurante().getId());
     }
 

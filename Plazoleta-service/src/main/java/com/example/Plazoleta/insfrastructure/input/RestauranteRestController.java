@@ -1,11 +1,15 @@
 package com.example.Plazoleta.insfrastructure.input;
 
+import com.example.Plazoleta.application.dto.Restaurante.RestauranteListRequest;
 import com.example.Plazoleta.application.dto.Restaurante.RestauranteRequest;
 import com.example.Plazoleta.application.handler.handlerRestaurante.IRestaurantesHandler;
+import com.example.Plazoleta.domain.modelo.Restaurante;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,11 +26,11 @@ public class RestauranteRestController {
     }
 
     @GetMapping("/restaurante")
-    public  ResponseEntity<RestauranteRequest> findAll(@RequestBody RestauranteRequest restauranteRequest){
-        restauranteHandler.saveRestaurante(restauranteRequest);
+    public  ResponseEntity<List<Restaurante>> findAll(@RequestBody RestauranteListRequest pagination){
+        var result = restauranteHandler.findAll(pagination);
         return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(restauranteRequest);
+                .status(HttpStatus.OK)
+                .body(result);
     }
 
 

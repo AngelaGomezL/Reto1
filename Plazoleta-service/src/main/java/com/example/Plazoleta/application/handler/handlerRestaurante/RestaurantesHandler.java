@@ -1,5 +1,6 @@
 package com.example.Plazoleta.application.handler.handlerRestaurante;
 
+import com.example.Plazoleta.application.dto.Restaurante.RestauranteListRequest;
 import com.example.Plazoleta.application.dto.Restaurante.RestauranteRequest;
 import com.example.Plazoleta.application.dto.Restaurante.RestauranteResponse;
 import com.example.Plazoleta.application.mapper.RestauranteMapper.RestauranteResponseMapper;
@@ -29,7 +30,7 @@ public class RestaurantesHandler implements IRestaurantesHandler {
     }
 
     @Override
-    public List<RestauranteResponse> findAllRestauranteFromRestaurantes() {
-        return null;
+    public List<Restaurante> findAll(RestauranteListRequest pagination) {
+        return restauranteServicePort.findAll(pagination);
     }
 }

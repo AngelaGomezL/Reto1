@@ -1,5 +1,6 @@
 package com.example.Plazoleta.domain.usecase;
 
+import com.example.Plazoleta.application.dto.Restaurante.RestauranteListRequest;
 import com.example.Plazoleta.domain.api.IRestauranteServicePort;
 import com.example.Plazoleta.domain.modelo.Restaurante;
 import com.example.Plazoleta.domain.spi.IRestaurantePersistencePort;
@@ -20,8 +21,8 @@ public class RestauranteUseCase implements IRestauranteServicePort {
     }
 
     @Override
-    public List<Restaurante> findAllRestaurante() {
-        return restaurantePersistencePort.getAllRestaurante();
+    public List<Restaurante> findAll(RestauranteListRequest pagination) {
+        return restaurantePersistencePort.findAll(pagination);
     }
 
     @Override

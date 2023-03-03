@@ -10,6 +10,7 @@ import javax.validation.constraints.Pattern;
 @Setter
 public class RestauranteRequest {
 
+
     @Pattern(regexp = "^[a-zA-Z\\s]*$")
     private String nombre;
     private String direccion;
